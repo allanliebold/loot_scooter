@@ -6,15 +6,24 @@ public class PlayerController : MonoBehaviour {
   
   public float moveSpeed;
   
+  public Transform groundCheck;
+  public float groundCheckRadius;
+  public LayerMask ground;
+  public bool isGrounded;
+  
   void Start() {
     playerBody = GetComponent<Rigidbody2D> (); 
   }
   
   void Update() {
-    if(Input.GetAxisRaw("Horizontal") > 0f) {
+    isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
+    
+    if(Input.GetAxisRaw("Horizontal") > 0f && isGrounded) {
       playerBody.velocity = new Vector3(moveSpeed, playerBody.velocity.y, 0f);  
-    } else if(Input.GetAxisRaw("Horizontal") < 0f) {
+    } else if(Input.GetAxisRaw("Horizontal") < 0f && isGrounded) {
       playerBody.velocity = new Vector3(-moveSpeed, playerBody.velocity.y, 0f);
+    } else {
+      playerBody.velocity = new Vector3(0f, playerBody.velocity.y, 0f); 
     }
   }
 }

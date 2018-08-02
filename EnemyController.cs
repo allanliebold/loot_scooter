@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour {
   }
   
   void Update() {
-    
+    if(canMove) {
+       
+    }
   }
 }

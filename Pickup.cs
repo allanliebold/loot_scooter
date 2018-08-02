@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour {
   public int pointValue;
   
   void Start() {
-    
+    levelManager = FindObjectOfType<LevelManager>();
   }
   
   void onTriggerEnter2D(Collision2D other) {

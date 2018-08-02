@@ -7,5 +7,11 @@ public class EnemyController : MonoBehaviour {
   
   private Rigidbody2D enemyBody; 
   
+  void Start() {
+    
+  }
   
+  void Update() {
+    
+  }
 }

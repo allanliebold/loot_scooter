@@ -12,7 +12,7 @@ public class Pickup : MonoBehaviour {
   void onTriggerEnter2D(Collision2D other) {
     if(other.name == "Player") {
       levelManager.AddToScore(pointValue);
-      Destroy(this.gameObject);    
+      gameObject.SetActive(false);   
     }
   }
 }

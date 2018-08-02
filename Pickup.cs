@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public GameObject levelManager;
+public LevelManager levelManager;
 public int pointValue;
 
 public class Pickup : MonoBehaviour {
